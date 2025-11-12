@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/missipsa2/mon-projet-maven'
+                git branch: 'main', url: 'https://github.com/missipsa2/mon-projet-maven'
             }
         }
         stage('Build') {
