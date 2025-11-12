@@ -1,19 +1,24 @@
 pipeline {
     agent any
     stages {
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/missipsa2/mon-projet-maven'
+            }
+        }
         stage('Build') {
             steps {
-                echo 'Building the app'
+                sh 'echo "building the app"'
             }
         }
         stage('Test') {
             steps {
-                echo 'Running tests'
+                sh 'echo "running tests"'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying the app'
+                sh 'echo "deploying"'
             }
         }
     }
