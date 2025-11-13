@@ -10,12 +10,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/missipsa2/mon-projet-maven.git'
             }
         }
-        stage('Build Maven'){
-            steps{
-                echo 'Compilation du projet avec Maven...'
-                sh 'mvn clean package -DskipTests'
-            }
-        }
         stage('Build Docker image'){
             steps{
                 echo 'Construction de l’image Docker...'
